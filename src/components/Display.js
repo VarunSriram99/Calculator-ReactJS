@@ -31,7 +31,7 @@ function Display(props)
       }
     }
     else if(props.val=="="){
-      const regex=/((\d+(\.\d{1,})?)([+-\/*](\d+(\.\d{1,})?))*)|([+-\/*]{1}\(?(\d+(\.\d{1,})?)([+-\/*](\d+(\.\d{1,})?))*\)?)/gm;
+      const regex=/((\d+(\.\d{1,})?)([+-\/*\%](\d+(\.\d{1,})?))*)|([+-\/*\%]{1}\(?(\d+(\.\d{1,})?)([+-\/*\%](\d+(\.\d{1,})?))*\)?)/gm;
       let y=inputData.current.value;
       y=y.replaceAll(regex,'')
       console.log(y+" after regex")
