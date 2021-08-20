@@ -18,6 +18,7 @@ function Display(props)
     if(props.val=="cl")
     {inputData.current.value="";
       setBr(true);
+      setDec(false);
   }
     else if(props.val=="bk"){
       if((inputData.current.value[inputData.current.value.length-1]=="+"||inputData.current.value[inputData.current.value.length-1]=="-"||inputData.current.value[inputData.current.value.length-1]=="*"||inputData.current.value[inputData.current.value.length-1]=="/"||inputData.current.value[inputData.current.value.length-1]=="%"))
@@ -81,8 +82,10 @@ function Display(props)
 
 
   function check(e){
-    if(inputData.current.value=="NaN" || inputData.current.value=="undefined"||inputData.current.value=="null" || inputData.current.value==Infinity)
+    if(inputData.current.value=="Infinity"||inputData.current.value=="NaN")
       {alert("Operation is Invalid");inputData.current.value="";}
+      if(inputData.current.value=="undefined"||inputData.current.value=="null")
+      inputData.current.value="";
     const x=e?e.target:inputData.current;
    if(x.value.length>15)
    {
