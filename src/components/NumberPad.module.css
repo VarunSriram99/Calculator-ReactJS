@@ -1,0 +1,104 @@
+.numpad{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.25%;
+    grid-auto-rows: minmax(100px, auto);
+    grid-auto-columns: minmax(100px,auto);
+    box-sizing: content-box;
+    height:50vh;
+    width: 99%;
+    text-align: center;
+    margin: 1vh;
+}
+button{
+    background-color: #ebe7e7;
+    font-size: 8vh;
+    font-weight: bolder;
+    border-radius: 10px;
+}
+.back{
+    grid-column: 3;
+    grid-row: 1;
+}
+.bracket{
+    grid-column: 2;
+    grid-row: 1;
+}
+.clear{
+    grid-column: 1;
+    grid-row: 1;
+}
+.mod{
+    grid-column: 4;
+    grid-row: 1;
+    background-color: rgb(235, 140, 85);
+    color:white;
+
+}
+.nine{
+    grid-column: 3;
+    grid-row: 2;
+}
+.eight{
+    grid-column: 2;
+    grid-row: 2;
+}
+.seven{
+    grid-column: 1;
+    grid-row: 2;
+}
+.six{
+    grid-column: 3;
+    grid-row: 3;
+}
+.five{
+    grid-column: 2;
+    grid-row: 3;
+}
+.four{
+    grid-column: 1;
+    grid-row: 3;
+}
+.three{
+    grid-column: 3;
+    grid-row: 4;
+}
+.two{
+    grid-column: 2;
+    grid-row: 4;
+}
+.one{
+    grid-column: 1;
+    grid-row: 4;
+}
+.dot{
+    grid-column: 1;
+    grid-row: 5;
+}
+.zero{
+    grid-column: 2;
+    grid-row: 5;
+}
+.equals{
+    grid-column: 3;
+    grid-row: 5;
+    background-color:rgb(85, 167, 235);
+    color:white;
+}
+.plus{
+    background-color: rgb(235, 140, 85);
+    color:white;
+}
+.minus{
+    background-color: rgb(235, 140, 85);
+    color:white;
+}
+.multiply{
+    background-color: rgb(235, 140, 85);
+    color:white;
+}
+.divide{
+    background-color: rgb(235, 140, 85);
+    color:white;
+}
