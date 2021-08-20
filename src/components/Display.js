@@ -60,8 +60,9 @@ function Display(props)
    else{
     x.style.fontSize = "11vw";
    }
-   if (parseInt(x.style.fontSize) < 2) {
-    x.style.fontSize= "2vw" ;   
+   if (parseInt(x.style.fontSize) < 4) {
+    x.style.fontSize= "4vw" ;   
+    x.value=x.value.substr(0,42)
     }
   }
   return <div className={classes.container}>

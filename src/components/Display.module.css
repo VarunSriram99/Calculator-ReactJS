@@ -13,6 +13,8 @@
 
 }
 .text{
+    position: relative;
+    top: 5vh;
     width:95%;
     height:100%;
     background-color: transparent;
