@@ -11,7 +11,8 @@ function Display(props)
   useEffect(()=>{ if(inputData.current){
     if(props.val!=null)
     {
-    inputData.current.focus();
+      if(window.innerWidth>768)
+        inputData.current.focus();
     if(props.val=="cl")
     inputData.current.value="";
     else if(props.val=="bk"){
