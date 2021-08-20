@@ -20,14 +20,20 @@ button{
 .back{
     grid-column: 3;
     grid-row: 1;
+    background-color: rgb(85, 167, 235);
+    color:white;
 }
 .bracket{
     grid-column: 2;
     grid-row: 1;
+    background-color: rgb(85, 167, 235);
+    color:white;
 }
 .clear{
     grid-column: 1;
     grid-row: 1;
+    background-color: rgb(85, 167, 235);
+    color: white;
 }
 .mod{
     grid-column: 4;
@@ -87,14 +93,20 @@ button{
     color:white;
 }
 .plus{
+    grid-column: 4;
+    grid-row:5;
     background-color: rgb(235, 140, 85);
     color:white;
 }
 .minus{
+    grid-column: 4;
+    grid-row:4;
     background-color: rgb(235, 140, 85);
     color:white;
 }
 .multiply{
+    grid-column: 4;
+    grid-row:3;
     background-color: rgb(235, 140, 85);
     color:white;
 }
