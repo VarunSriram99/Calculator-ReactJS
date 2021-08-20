@@ -7,6 +7,7 @@ import classes from './Display.module.css'
 function Display(props)
 {
   const [br,setBr]= useState(true) 
+  const [dec,setDec]=useState(false)
   const inputData=useRef(null);
   useEffect(()=>{ if(inputData.current){
     if(props.val!=null)
@@ -16,6 +17,10 @@ function Display(props)
     if(props.val=="cl")
     inputData.current.value="";
     else if(props.val=="bk"){
+      if((inputData.current.value[inputData.current.value.length-1]=="+"||inputData.current.value[inputData.current.value.length-1]=="-"||inputData.current.value[inputData.current.value.length-1]=="*"||inputData.current.value[inputData.current.value.length-1]=="/"||inputData.current.value[inputData.current.value.length-1]=="%"))
+        {setDec(true);console.log("Decimal is ",dec)}
+        if(inputData.current.value[inputData.current.value.length-1]==".")
+        {setDec(false)}
       inputData.current.value=inputData.current.value.substr(0,(inputData.current.value.length-1))
     }
     else if(props.val=="()")
@@ -36,14 +41,33 @@ function Display(props)
       y=y.replaceAll(regex,'')
       console.log(y+" after regex")
       if( y=="" )
-      {inputData.current.value=eval(inputData.current.value);}
+      {
+        try
+        {
+          inputData.current.value=eval(inputData.current.value);
+        }
+        catch{
+          inputData.current.value="";
+          alert("Invalid calculation")
+        }
+      }
       else{
         inputData.current.value="";
         alert("Invalid calculation")
       } 
     }
-    else
+    else if(props.val=="."){
+      if(dec==false)
+        {inputData.current.value+=(props.val).toString();
+        setDec(true);
+        }
+    }
+    else{
+      if(props.val=="+"||props.val=="-"||props.val=="*"||props.val=="/"||props.val=="%")
+        setDec(false);
     inputData.current.value+=(props.val).toString();
+    
+    }
     }
     check();
     
@@ -52,6 +76,8 @@ function Display(props)
 
 
   function check(e){
+    if(inputData.current.value=="NaN" || inputData.current.value==undefined ||inputData.current.value==null || inputData.current.value==Infinity)
+      {alert("Operation is Invalid");inputData.current.value="";}
     const x=e?e.target:inputData.current;
    if(x.value.length>15)
    {
